@@ -1,3 +1,13 @@
+# customer_emails
+E-Mail Addresses List per Customer
+
+Fiori App that lists per customer the maintained e-mail addresses. 
+
+- The solution is created in a SAP BTP Trial Account
+- CRUD Operations are supported for the available Mails locally
+- There should be always only one default address be selected
+- Maintaining Remarks to the mail addresses is possible and it is visible in the list
+
 ## Application Details
 |               |
 | ------------- |
