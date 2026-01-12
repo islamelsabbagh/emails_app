@@ -1,0 +1,107 @@
+{
+    "CustomersCollection": [
+        {
+            "addressID": "11277146",
+            "accountName": "Testapotheke",
+            "phoneNumber": "+49 30 12345678",
+            "emailAddresses": [
+            {
+                "ordinalNumber": 1,
+                "default": true,
+                "emailAddress": "test.apotheke@testapotheke.com"
+            },
+            {
+                "ordinalNumber": 2,
+                "default": false,
+                "emailAddress": "rechnung@testapotheke.com",
+                "remark": "Billing"
+            }
+            ]
+        },
+        {
+            "addressID": "11277150",
+            "accountName": "Adlerapotheke",
+            "phoneNumber": "+49 40 98765432",
+            "emailAddresses": [
+            {
+                "ordinalNumber": 1,
+                "default": true,
+                "emailAddress": "test@adlerapotheke.de",
+                "remark": "Haupt ASP"
+            }
+            ]
+        },
+        {
+            "addressID": "11277160",
+            "accountName": "Linden Apotheke",
+            "phoneNumber": "+49 69 55667788",
+            "emailAddresses": [
+            {
+                "ordinalNumber": 1,
+                "default": true,
+                "emailAddress": "info@lindenapotheke.de"
+            },
+            {
+                "ordinalNumber": 2,
+                "default": false,
+                "emailAddress": "buchhaltung@lindenapotheke.de",
+                "remark": "Accounting"
+            }
+            ]
+        },
+        {
+            "addressID": "11277172",
+            "accountName": "Sonnen Apotheke",
+            "phoneNumber": "+49 89 33445566",
+            "emailAddresses": [
+            {
+                "ordinalNumber": 1,
+                "default": true,
+                "emailAddress": "kontakt@sonnenapotheke.de"
+            }
+            ]
+        },
+        {
+            "addressID": "11277185",
+            "accountName": "Rosen Apotheke",
+            "phoneNumber": "+49 221 77889900",
+            "emailAddresses": [
+            {
+                "ordinalNumber": 1,
+                "default": true,
+                "emailAddress": "info@rosenapotheke.de"
+            },
+            {
+                "ordinalNumber": 2,
+                "default": false,
+                "emailAddress": "service@rosenapotheke.de",
+                "remark": "Customer Service"
+            },
+            {
+                "ordinalNumber": 3,
+                "default": false,
+                "emailAddress": "buchhaltung@rosenapotheke.de",
+                "remark": ""
+            },
+            {
+                "ordinalNumber": 4,
+                "default": false,
+                "emailAddress": "test@rosenapotheke.de",
+                "remark": ""
+            }
+            ]
+        },
+        {
+            "addressID": "11277196",
+            "accountName": "Marien Apotheke",
+            "phoneNumber": "+49 351 11223344",
+            "emailAddresses": [
+            {
+                "ordinalNumber": 1,
+                "default": true,
+                "emailAddress": "kontakt@marienapotheke.de"
+            }
+            ]
+        }
+    ]
+}

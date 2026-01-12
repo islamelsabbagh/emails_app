@@ -1,0 +1,105 @@
+<mvc:View
+	controllerName="test.app.emailapp.controller.Detail"
+	xmlns="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:f="sap.f"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<ObjectPageLayout
+		id="ObjectPageLayout"
+		showTitleInHeaderContent="true"
+		alwaysShowContentHeader="false"
+		preserveHeaderStateOnScroll="false"
+		headerContentPinnable="true"
+		isChildPage="true"
+		upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:HBox>
+						<m:Title text="{customers>accountName}" wrapping="true"/>
+					</m:HBox>
+				</expandedHeading>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+		<headerContent>
+			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+				<m:Avatar
+					src="sap-icon://email"
+					displaySize="S"
+					displayShape="Square"
+					class="sapUiTinyMarginEnd">
+				</m:Avatar>
+				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<m:Label text="{customers>addressID}"/>
+					<m:Text text="Active Emails ({=${customers>emailAddresses}.length})"/>
+				</m:VBox>
+			</m:FlexBox>
+		</headerContent>
+
+		<sections>
+			<ObjectPageSection title="Email Addresses">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<m:Table
+								id="emailsTable"
+								mode="None"
+								delete="onDelete"
+								items="{path : 'customers>emailAddresses'}">
+								<m:headerToolbar>
+									<m:OverflowToolbar id="otbSubheader">
+										<m:Title text="Email Addresses" level="H2" />
+										<m:ToolbarSpacer />
+										<m:Button id="editButton" text="Edit" type="Transparent"
+											press="onEdit" />
+										<m:Button id="createButton" text="Create" type="Emphasized"
+											press="onCreate" visible="false" />
+										<m:Button id="saveButton" text="Save" type="Transparent"
+											press="onSave" visible="false" />
+										<m:Button id="cancelButton" text="Cancel" type="Transparent"
+											press="onCancel" visible="false" />
+									</m:OverflowToolbar>
+								</m:headerToolbar>
+								<m:columns>
+									<m:Column width="20em">
+										<m:Text text="Email Address"/>
+									</m:Column>
+									<m:Column>
+										<m:Text text="Default"/>
+									</m:Column>
+									<m:Column width="20em">
+										<m:Text text="Remarks"/>
+									</m:Column>
+									<m:Column/>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem>
+										<m:cells>
+											<m:ObjectIdentifier text="{customers>emailAddress}"/>
+											<m:CheckBox selected="{customers>default}"
+												enabled="false" 
+												select="onSelectDefault"
+												app:emailID="{customers>ordinalNumber}"/>
+											<m:Text text="{customers>remark}"/>
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+
+		<footer>
+			<m:OverflowToolbar>
+				<m:ToolbarSpacer/>
+				<m:Button type="Accept" text="Save"/>
+				<m:Button type="Reject" text="Cancel"/>
+			</m:OverflowToolbar>
+		</footer>
+	</ObjectPageLayout>
+</mvc:View>
