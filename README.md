@@ -1,4 +1,4 @@
-# customer_emails
+# emails_app
 E-Mail Addresses List per Customer
 
 Fiori App that lists per customer the maintained e-mail addresses. 
