@@ -21,7 +21,7 @@ sap.ui.define([
 		},
 
 		_onCustomerMatched: function (oEvent) {
-			// first check if there is no changes left from the previous customer
+			// First check if there is no changes left from the previous customer
 			if (this.aEmailsList && this.aEmailsList.length !== 0) {
 				this.oModel.setProperty(this.sBindingPath, this.aEmailsList);
 				this.aEmailsList = [];
@@ -107,7 +107,7 @@ sap.ui.define([
 			var oSource = oEvent.getSource();
 			var emailID = oSource.data("emailID");
 			var aEmailsList = deepExtend([], this.oModel.getProperty(this.sBindingPath));
-			// only one default is allowed
+			// Only one default is allowed
 			aEmailsList.map(element => {
 				if (element.ordinalNumber != emailID) {
 					element.default = !bSelected;
@@ -128,10 +128,10 @@ sap.ui.define([
 				var	sPath = oItem.getBindingContext("customers").getPath();
 				var sEmailPath = parseInt(sPath.split("/").slice(-1).pop(), 10);
 
-				// after deletion put the focus back to the list
+				// After deletion put the focus back to the list
 				oSource.attachEventOnce("updateFinished", oSource.focus, oSource);
 
-				// delete the item from the model
+				// Delete the item from the model
 				var aEmailsList = deepExtend([], this.oModel.getProperty(this.sBindingPath));
 				aEmailsList.splice(sEmailPath, 1);
 				this.oModel.setProperty(this.sBindingPath, aEmailsList);

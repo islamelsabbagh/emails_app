@@ -15,26 +15,21 @@ sap.ui.define([
         },
 
         init() {
-            // call the base component's init function
+            // Call the base component's init function
             UIComponent.prototype.init.apply(this, arguments);
 
-            // set the device model
+            // Set the device model
             this.setModel(models.createDeviceModel(), "device");
 
-            // enable routing
-            this.getRouter().initialize();
-
-            // set model
+            // Set model
             var oModel = new JSONModel();
 			this.setModel(oModel);
 
-			// set customers model on this sample
+			// Set customers model on this sample
             var oCustomersModel = new JSONModel("/model/customers.json"); 
-            //oCustomersModel.loadData("./model/customers.json", false);
-			//oCustomersModel = new JSONModel(sap.ui.require.toUrl('sap/ui/demo/mock/products.json'));
-			//oCustomersModel.setSizeLimit(1000);
 			this.setModel(oCustomersModel, 'customers');
 
+            // Enable routing
             var oRouter = this.getRouter();
 			oRouter.attachBeforeRouteMatched(this._onBeforeRouteMatched, this);
 			oRouter.initialize();
